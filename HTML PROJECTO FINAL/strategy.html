@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dead by Daylight - Looping Strategy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Cinzel', serif;
+        margin: 0;
+        padding: 0;
+        background-color: #121212;
+        color: #eee;
+        overflow-x: hidden;
+        background-image: url('fenglooping.jpeg');
+        background-size: contain;
+        background-position: center center;
+        background-attachment: fixed;
+      }
+
+      header {
+        background-color: #333;
+        color: #FF4444;
+        padding: 20px;
+        text-align: center;
+        position: relative;
+        font-family: 'Cinzel', serif;
+        font-size: 2.8rem;
+        text-shadow: 0 2px 4px rgba(255, 68, 68, 0.7), 0 0 10px rgba(0, 0, 0, 0.7);
+        letter-spacing: 1.5px;
+      }
+
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        background-color: #444;
+      }
+
+      nav ul li {
+        margin: 0 15px;
+      }
+
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 20px;
+        font-family: 'Cinzel', serif;
+        font-size: 1.1rem;
+        letter-spacing: 0.5px;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      nav a:hover {
+        background-color: #FF4444;
+        color: #fff;
+        border-radius: 5px;
+      }
+
+      .looping-section {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .looping-images img {
+        width: 80%;
+        height: auto;
+        border-radius: 8px;
+        margin-top: 20px;
+      }
+
+      video {
+        width: 80%;
+        height: auto;
+        border-radius: 8px;
+        margin-top: 20px;
+      }
+
+      footer {
+        background-color: #333;
+        color: #fff;
+        font-size: 14px;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .content {
+        margin: 0 auto;
+        max-width: 1200px;
+      }
+
+      .loop-explanation {
+        text-align: left;
+        padding: 10px;
+      }
+
+      .loop-explanation h3 {
+        color: #FF4444;
+        font-size: 1.6rem;
+      }
+
+      .loop-explanation ul {
+        list-style-type: disc;
+        padding-left: 20px;
+        font-size: 1.1rem;
+      }
+
+      .loop-explanation p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-top: 10px;
+        text-align: justify;
+      }
+
+      .loop-explanation p strong {
+        font-size: 1.2rem;
+        color: #FF4444;
+      }
+
+      .loop-explanation p u {
+        text-decoration: underline;
+      }
+
+      .loop-explanation p em {
+        font-style: italic;
+      }
+
+      .falling-logos {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 100;
+      }
+
+      .logo {
+        position: absolute;
+        top: -100px;
+        width: 40px;
+        height: 40px;
+        background-image: url('bloodpoint.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        animation: fall linear infinite;
+        opacity: 0.8;
+      }
+
+      @keyframes fall {
+        0% {
+          transform: translateY(-100px);
+          opacity: 0.8;
+        }
+
+        100% {
+          transform: translateY(110vh);
+          opacity: 0.8;
+        }
+      }
+
+      .logo:nth-child(1) {
+        left: 5%;
+        animation-duration: 5s;
+        animation-delay: 0s;
+      }
+
+      .logo:nth-child(2) {
+        left: 12%;
+        animation-duration: 6s;
+        animation-delay: 1s;
+      }
+
+      .logo:nth-child(3) {
+        left: 20%;
+        animation-duration: 4.5s;
+        animation-delay: 0.5s;
+      }
+
+      .logo:nth-child(4) {
+        left: 30%;
+        animation-duration: 7s;
+        animation-delay: 2s;
+      }
+
+      .logo:nth-child(5) {
+        left: 40%;
+        animation-duration: 5.5s;
+        animation-delay: 1s;
+      }
+
+      .logo:nth-child(6) {
+        left: 50%;
+        animation-duration: 6.5s;
+        animation-delay: 0.7s;
+      }
+
+      .logo:nth-child(7) {
+        left: 60%;
+        animation-duration: 4.5s;
+        animation-delay: 1.5s;
+      }
+
+      .logo:nth-child(8) {
+        left: 70%;
+        animation-duration: 8s;
+        animation-delay: 3s;
+      }
+
+      .logo:nth-child(9) {
+        left: 80%;
+        animation-duration: 4s;
+        animation-delay: 2.3s;
+      }
+
+      .logo:nth-child(10) {
+        left: 90%;
+        animation-duration: 5s;
+        animation-delay: 1.2s;
+      }
+    </style>
+  </head>
+  <body>
+    <header> Dead by Daylight - Looping Strategy </header>
+    <nav>
+      <ul>
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <a href="build.html">Loop Build</a>
+        </li>
+        <li>
+          <a href="strategy.html">Looping Strategy</a>
+        </li>
+        <li>
+          <a href="store.html">Store</a>
+        </li>
+      </ul>
+    </nav>
+    <main class="content">
+      <section class="looping-section">
+        <h2>
+          <u>How to Loop Using the Build</u>
+        </h2>
+        <p>
+          <em>In Dead by Daylight, mastering loops is a crucial skill. There are <strong>two types of sides</strong> in each loop: the <u>strong</u> side and the <strong>weak</strong> side. Knowing when and where to position yourself on these sides can make all the difference in escaping the killer! </em>
+        </p>
+        <div class="looping-images">
+          <h3>
+            <strong>Example of Loops</strong>
+          </h3>
+          <img src="looping.jpg" alt="Looping Example" />
+        </div>
+        <div class="loop-explanation">
+          <h3>
+            <u>Weak and Strong Sides Explained:</u>
+          </h3>
+          <ul>
+            <li>
+              <strong>The strong side:</strong> It contains a vault or window that allows you to evade the killer's attacks.
+            </li>
+            <li>
+              <em>The weak side:</em> It lacks a vault or window, making it difficult to loop.
+            </li>
+            <li>
+              <strong>
+                <u>Position yourself:</u>
+              </strong> Always try to position yourself on the strong side of the loop. This will give you an advantage over the killer.
+            </li>
+            <li>Look for every opportunity to mindgame the killer— <strong>and anticipate their moves</strong> for being ready to react! </li>
+          </ul>
+          <p>
+            <strong>Pro Tip:</strong> Stay aware of your surroundings, and always keep an eye on the killer's position. If the killer tries to double back on you, be ready to adapt!
+          </p>
+        </div>
+        <h3>Watch a Video Example:</h3>
+        <video controls>
+          <source src="loopingfeng.mp4" type="video/mp4">
+        </video>
+      </section>
+    </main>
+    <div class="falling-logos">
+      <div class="logo"></div>
+      <div class="logo"></div>
+      <div class="logo"></div>
+      <div class="logo"></div>
+      <div class="logo"></div>
+      <div class="logo"></div>
+      <div class="logo"></div>
+      <div class="logo"></div>
+      <div class="logo"></div>
+      <div class="logo"></div>
+    </div>
+    <footer>
+      <p>© Dead by Daylight</p>
+    </footer>
+  </body>
+</html>

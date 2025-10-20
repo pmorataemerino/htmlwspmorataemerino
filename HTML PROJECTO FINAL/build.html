@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looping Build - Dead by Daylight</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Cinzel', serif;
+        margin: 0;
+        padding: 0;
+        background-color: #121212;
+        color: #eee;
+        overflow-x: hidden;
+        background-image: url('fenglooping.jpeg');
+        background-size: contain;
+        background-position: center center;
+        background-attachment: fixed;
+      }
+
+      header {
+        background-color: #333;
+        color: #FF4444;
+        padding: 20px;
+        text-align: center;
+        font-size: 2.8rem;
+        text-shadow: 0 2px 4px rgba(255, 68, 68, 0.7), 0 0 10px rgba(0, 0, 0, 0.7);
+        letter-spacing: 1.5px;
+      }
+
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        background-color: #444;
+      }
+
+      nav ul li {
+        margin: 0 15px;
+      }
+
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 20px;
+        font-family: 'Cinzel', serif;
+        font-size: 1.1rem;
+        letter-spacing: 0.5px;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      nav a:hover {
+        background-color: #FF4444;
+        color: #fff;
+        border-radius: 5px;
+      }
+
+      main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        flex-direction: column;
+        padding: 0 20px;
+      }
+
+      h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        color: #FF4444;
+        text-shadow: 0 2px 4px rgba(255, 68, 68, 0.7), 0 0 5px rgba(0, 0, 0, 0.5);
+      }
+
+      table {
+        width: 100%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        max-width: 900px;
+        background-color: #222;
+        border-radius: 8px;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid #ccc;
+      }
+
+      th,
+      td {
+        padding: 15px;
+        text-align: center;
+        color: #ddd;
+      }
+
+      th {
+        background-color: #333;
+        color: #fff;
+      }
+
+      .perk-image {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+
+      footer {
+        background-color: #333;
+        color: #fff;
+        font-size: 14px;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .falling-logos {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 100;
+      }
+
+      .logo {
+        position: absolute;
+        top: -100px;
+        width: 40px;
+        height: 40px;
+        background-image: url('bloodpoint.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        animation: fall linear infinite;
+        opacity: 0.8;
+      }
+
+      @keyframes fall {
+        0% {
+          transform: translateY(-100px);
+          opacity: 0.8;
+        }
+
+        100% {
+          transform: translateY(110vh);
+          opacity: 0.8;
+        }
+      }
+
+      .logo:nth-child(1) {
+        left: 5%;
+        animation-duration: 5s;
+        animation-delay: 0s;
+      }
+
+      .logo:nth-child(2) {
+        left: 12%;
+        animation-duration: 6s;
+        animation-delay: 1s;
+      }
+
+      .logo:nth-child(3) {
+        left: 20%;
+        animation-duration: 4.5s;
+        animation-delay: 0.5s;
+      }
+
+      .logo:nth-child(4) {
+        left: 30%;
+        animation-duration: 7s;
+        animation-delay: 2s;
+      }
+
+      .logo:nth-child(5) {
+        left: 40%;
+        animation-duration: 5.5s;
+        animation-delay: 1s;
+      }
+
+      .logo:nth-child(6) {
+        left: 50%;
+        animation-duration: 6.5s;
+        animation-delay: 0.7s;
+      }
+
+      .logo:nth-child(7) {
+        left: 60%;
+        animation-duration: 4.5s;
+        animation-delay: 1.5s;
+      }
+
+      .logo:nth-child(8) {
+        left: 70%;
+        animation-duration: 8s;
+        animation-delay: 3s;
+      }
+
+      .logo:nth-child(9) {
+        left: 80%;
+        animation-duration: 4s;
+        animation-delay: 2.3s;
+      }
+
+      .logo:nth-child(10) {
+        left: 90%;
+        animation-duration: 5s;
+        animation-delay: 1.2s;
+      }
+
+      .bold {
+        font-weight: bold;
+      }
+
+      .italic {
+        font-style: italic;
+      }
+
+      .underline {
+        text-decoration: underline;
+      }
+
+      .highlight {
+        background-color: yellow;
+      }
+
+      .large-text {
+        font-size: 1.5rem;
+      }
+
+      .small-text {
+        font-size: 0.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header> Dead by Daylight - Builds For Loop </header>
+    <nav>
+      <ul>
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <a href="build.html">Looping Build</a>
+        </li>
+        <li>
+          <a href="strategy.html">Looping Strategy</a>
+        </li>
+        <li>
+          <a href="store.html">Store</a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <section>
+        <h2>The Meta Build</h2>
+        <p class="large-text">In this build, you will maximize your chances of looping effectively and staying alive longer. The following <span class="bold">perks</span> are critical to mastering the loop: </p>
+        <table>
+          <tr>
+            <th>Perk</th>
+            <th>Icon</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>
+              <span class="underline">Resilience</span>
+            </td>
+            <td>
+              <img src="resilience.jpg" alt="Resilience" class="perk-image">
+            </td>
+            <td>
+              <span class="italic">Increases the speed of all actions when injured by 9%.</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="underline">Adrenaline</span>
+            </td>
+            <td>
+              <img src="adrenaline.jpg" alt="Adrenaline" class="perk-image">
+            </td>
+            <td>
+              <span class="italic">Gain a speed boost at the endgame when you are injured and also heal yourself instantly when the 5 gen pops.</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="underline">Dead Hard</span>
+            </td>
+            <td>
+              <img src="deadhard.jpg" alt="Dead Hard" class="perk-image">
+            </td>
+            <td>
+              <span class="italic">Use a dash to avoid a hit, giving you extra time to escape.</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="underline">Windows of Opportunity</span>
+            </td>
+            <td>
+              <img src="windows.jpg" alt="Window of Opportunity" class="perk-image">
+            </td>
+            <td>
+              <span class="italic">Reveals the location of nearby windows and vaults to help while looping.</span>
+            </td>
+          </tr>
+        </table>
+      </section>
+      <section>
+        <h2>The ResI Value Build</h2>
+        <p class="large-text">In this build, you focus on being injured and seeing the killer aura even if he sees yours. The following perks are key:</p>
+        <table>
+          <tr>
+            <th>Perk</th>
+            <th>Icon</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>
+              <span class="underline">Object Of Obsession</span>
+            </td>
+            <td>
+              <img src="object.jfif" alt="Object of Obsession" class="perk-image">
+            </td>
+            <td>
+              <span class="italic">If you are the killer's obsession, your aura is shown to him for 3 seconds. You also get a 5% healing and repairing boost each time this happens.</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="underline">Resilience</span>
+            </td>
+            <td>
+              <img src="resilience.jpg" alt="Resilience" class="perk-image">
+            </td>
+            <td>
+              <span class="italic">Increases the speed of all actions when injured by 9%.</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="underline">Deadhard</span>
+            </td>
+            <td>
+              <img src="deadhard.jpg" alt="Deadhard" class="perk-image">
+            </td>
+            <td>
+              <span class="italic">Use a dash to avoid a hit, giving you extra time to escape.</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="underline">Hope</span>
+            </td>
+            <td>
+              <img src="hope.jfif" alt="Hope" class="perk-image">
+            </td>
+            <td>
+              <span class="italic">Gain a 7% speed boost for the last portion of the game when the 5 generators are completed.</span>
+            </td>
+          </tr>
+        </table>
+      </section>
+    </main>
+    <div class="falling-logos">
+      <div class="logo"></div>
+      <div class="logo"></div>
+      <div class="logo"></div>
+      <div class="logo"></div>
+      <div class="logo"></div>
+      <div class="logo"></div>
+      <div class="logo"></div>
+      <div class="logo"></div>
+      <div class="logo"></div>
+      <div class="logo"></div>
+    </div>
+    <footer>
+      <p>© Dead by Daylight</p>
+    </footer>
+  </body>
+</html>
