@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Mistral - La teva emissora</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            background-color: #555;
+        }
+        
+        /* Main Content */
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 30px 0;
+            gap: 20px;
+        }
+        
+        .content-section {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .content-section h2 {
+            color: #1a2a6c;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #fdbb2d;
+        }
+        
+        /* Radio Player */
+        .radio-player {
+            background-color: #1a2a6c;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .player-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+        
+        .play-btn {
+            background-color: #fdbb2d;
+            color: #1a2a6c;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin: 0 15px;
+            transition: transform 0.3s;
+        }
+        
+        .play-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #1a2a6c;
+            color: white;
+        }
+        
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        /* Forms */
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .submit-btn {
+            background-color: #1a2a6c;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #0d1a4d;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">RÀDIO MISTRAL</div>
+            <div class="tagline">La teva emissora de confiança</div>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#home">Inici</a></li>
+                <li><a href="#programs">Programes</a></li>
+                <li><a href="#analytics">Estadístiques</a></li>
+                <li><a href="#contact">Contacte</a></li>
+                <li><a href="#employees">Treballadors</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-content">
+            <!-- Radio Section -->
+            <section class="content-section" id="home">
+                <h2>Escolta en directe</h2>
+                <div class="radio-player">
+                    <h3>Ràdio Mistral - En viu</h3>
+                    <div class="player-controls">
+                        <button class="play-btn">▶</button>
+                    </div>
+                    <p>Actualment reproduint: Èxits del moment</p>
+                </div>
+                
+                <h2>Els nostres programes</h2>
+                <ul>
+                    <li><strong>Matins amb energia</strong> - 07:00 - 10:00</li>
+                    <li><strong>Música per treballar</strong> - 10:00 - 14:00</li>
+                    <li><strong>Tardes divertides</strong> - 16:00 - 19:00</li>
+                    <li><strong>Nits amb ritme</strong> - 20:00 - 00:00</li>
+                </ul>
+            </section>
+            
+            <!-- Analytics Section -->
+            <section class="content-section" id="analytics">
+                <h2>Estadístiques de visites i clicks</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Mes</th>
+                            <th>Visites</th>
+                            <th>Clicks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Gener</td>
+                            <td>500</td>
+                            <td>25</td>
+                        </tr>
+                        <tr>
+                            <td>Febrer</td>
+                            <td>600</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>Març</td>
+                            <td>1000</td>
+                            <td>50</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Gràfic d'evolució</h3>
+                <div style="height: 200px; background: linear-gradient(to top, #1a2a6c, #b21f1f, #fdbb2d); border-radius: 8px; display: flex; align-items: flex-end; justify-content: space-around; padding: 10px;">
+                    <div style="width: 60px; background-color: white; height: 50%;"></div>
+                    <div style="width: 60px; background-color: white; height: 60%;"></div>
+                    <div style="width: 60px; background-color: white; height: 100%;"></div>
+                </div>
+                <div style="display: flex; justify-content: space-around; margin-top: 10px;">
+                    <span>Gener</span>
+                    <span>Febrer</span>
+                    <span>Març</span>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Employee Registration Section -->
+        <section class="content-section" id="employees">
+            <h2>Formulari de registre per treballadors</h2>
+            <form id="employee-form" action="success.html" method="GET">
+                <div class="form-group">
+                    <label for="name">Nom complet *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Correu electrònic *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Telèfon</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="department">Departament *</label>
+                    <select id="department" name="department" required>
+                        <option value="">Selecciona un departament</option>
+                        <option value="production">Producció</option>
+                        <option value="technical">Tècnic</option>
+                        <option value="commercial">Comercial</option>
+                        <option value="administration">Administració</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="position">Posició *</label>
+                    <input type="text" id="position" name="position" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="start-date">Data d'inici *</label>
+                    <input type="date" id="start-date" name="start-date" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="comments">Comentaris addicionals</label>
+                    <textarea id="comments" name="comments" rows="4"></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Registrar treballador</button>
+            </form>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Ràdio Mistral &copy; 2025 - Tots els drets reservats</p>
+            <p>Institut Gabriela Mistral - Pedro Morata & Izan Márquez</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Simple radio player functionality
+        document.querySelector('.play-btn').addEventListener('click', function() {
+            const btn = this;
+            if (btn.textContent === '▶') {
+                btn.textContent = '❚❚';
+                btn.style.backgroundColor = '#b21f1f';
+            } else {
+                btn.textContent = '▶';
+                btn.style.backgroundColor = '#fdbb2d';
+            }
+        });
+        
+        // Form validation and redirection
+        document.getElementById('employee-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simple validation
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const department = document.getElementById('department').value;
+            const position = document.getElementById('position').value;
+            const startDate = document.getElementById('start-date').value;
+            
+            if (!name || !email || !department || !position || !startDate) {
+                alert('Si us plau, omple tots els camps obligatoris (*)');
+                return;
+            }
+            
+            // If validation passes, redirect to success page
+            window.location.href = 'success.html';
+        });
+    </script>
+</body>
+</html>
